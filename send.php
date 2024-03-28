@@ -1,26 +1,53 @@
 <?php
-$servername = "localhost";
-$username = "username";
-$password = "BFJ_7w-2ppairUa5";
-$dbname = "perfumedb";
+include('dbconnect.php');
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+if(isset($_POST['submit'])){
+
+  $name = $_POST['pname'];
+
+  $query = mysqli_query($conn, "insert into perfumes (pname) values ('$name')");
+
+  if($query){
+    echo "<script>alert('perfume registered')</script>";
+  } else{
+    echo ("perfume not registered");
+  }
 }
-
-// $sql = "INSERT INTO perfumes (pname)
-// VALUES ('tomford')";
-
-// if ($conn->query($sql) === TRUE) {
-//   echo "New record created successfully";
-// } else {
-//   echo "Error: " . $sql . "<br>" . $conn->error;
-// }
-
-$conn->close();
 ?>
 
 
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfume</title>
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+
+
+
+<form action="send.php" method="POST" >
+    <section class="container">
+        <header>Rejister Perfume</header>
+       
+        <div class="inputbox"> 
+            <label for="iname">Perfume Name:</label>
+            <input type="text" name="pname" id="iname" required placeholder="Perfume name"/>
+        </div>
+      
+        
+        <button type="submit" name="submit">Register</button>
+    
+    </section>
+   
+</form>
+
+  
+
+ </body>
+</html>

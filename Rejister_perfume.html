@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 
+
+
 <html lang="en">
  <head>
   <meta charset="UTF-8">
@@ -11,17 +13,17 @@
 
 
 
-<form action="send.php" method="post" >
+<form action="send.php" method="POST" >
     <section class="container">
         <header>Rejister Perfume</header>
        
         <div class="inputbox"> 
-            <label for="pname">Perfume Name:</label>
-            <input type="text" name="pname" id="pname" required placeholder="Perfume name"/>
+            <label for="iname">Perfume Name:</label>
+            <input type="text" name="pname" id="iname" required placeholder="Perfume name"/>
         </div>
       
         
-        <button name="submit">Register</button>
+        <button type="submit" name="submit">Register</button>
     
     </section>
    
@@ -39,7 +41,7 @@ $password='BFJ_7w-2ppairUa5';
 $dbname='perfumedb';
 $conn = mysqli_connect($servername,$username,$password,$dbname);
 if(!$conn){
-    die("ERROR: Could not connect".mysql_error());
+    die("ERROR: Could not connect".mysqli_error());
 }
 
 //for inserting our data 
