@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfume</title>
+  <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+
+
+
+<form action="send.php" method="post" >
+    <section class="container">
+        <header>Rejister Perfume</header>
+       
+        <div class="inputbox"> 
+            <label for="pname">Perfume Name:</label>
+            <input type="text" name="pname" id="pname" required placeholder="Perfume name"/>
+        </div>
+      
+        
+        <button name="submit">Register</button>
+    
+    </section>
+   
+</form>
+
+  
+
+ </body>
+</html>
+
+<!-- <?php
+$servername='localhost';
+$username='root';
+$password='BFJ_7w-2ppairUa5';
+$dbname='perfumedb';
+$conn = mysqli_connect($servername,$username,$password,$dbname);
+if(!$conn){
+    die("ERROR: Could not connect".mysql_error());
+}
+
+//for inserting our data 
+if(isset($_POST['submit'])){
+    $pname = $_POST['name'];
+    $sql = "INSERT INTO perfumes VALUES ('$pname')";
+    if(mysqli_query($conn, $sql)){
+        echo "Inserted record successfully";
+    }
+    else{
+        echo "ERROR: Sorry :".$sql."".mysqli_error($conn);
+    }
+    mysqli_close($conn);
+}
+?> -->
