@@ -1,7 +1,7 @@
 <?php
 include('dbconnect.php');
 
-// $dropdata = $conn->$query ("select pname from perfumes");
+
 $result = mysqli_query($conn, "select pname from perfumes");
 $resultsec = mysqli_query($conn, "select pname from perfumes");
 $resultthird = mysqli_query($conn, "select pname from perfumes");
@@ -13,7 +13,8 @@ if(isset($_POST['submitq'])){
     $puffsec = $_POST['perfumsec'];
     $puffthird = $_POST['perfumthird'];
     $check = ['$puff', '$puffsec', '$resultthird'];
-    $query = mysqli_query($conn, "insert into customers (customer_name, choice, choicetwo, choicethird) values ('$customername', '$puff', '$puffsec', '$puffthird' )");
+    $query = mysqli_query($conn, "update perfumes set pname");
+    
 
     // if($check ==' '){
     //     echo "<script>alert('enter perfume selection')</script>";
@@ -23,7 +24,7 @@ if(isset($_POST['submitq'])){
     // }
   
     if($query){
-      echo "<script>alert('customer registered')</script>";
+      echo "<script>alert('customer updated')</script>";
     }
   }
 ?>
@@ -43,15 +44,19 @@ if(isset($_POST['submitq'])){
 
 <form action=" " method="post">
     <section class="container">
-        <header>Register New Customer</header>
+        <header>Update Customer</header>
        
         <div class="inputbox">
             <label for="cname">Customer Name:</label>
             <input type="text" name="custname" id="cname" required placeholder="Enter Customer Name"/>
         </div>
+        <div class="inputbox">
+            <label for="cid">Customer ID:</label>
+            <input type="text" name="custid" id="cid" required placeholder="Enter Customer ID"/>
+        </div>
 
         <div class="inputsec">
-            <label for="perfum">select perfume</label>
+            <label for="perfum">update perfume</label>
             <select name="perfum" >
             <option ></option>
                     <?php
@@ -68,7 +73,7 @@ if(isset($_POST['submitq'])){
         </div>
 
         <div class="inputsec">
-            <label for="perfumsec">select second perfume</label>
+            <label for="perfumsec">update second perfume</label>
             <select name="perfumsec">
             <option ></option>
                     <?php
@@ -84,7 +89,7 @@ if(isset($_POST['submitq'])){
             </select>
         </div>
         <div class="inputsec">
-            <label for="perfumthird">select third perfume</label>
+            <label for="perfumthird">update third perfume</label>
             <select name="perfumthird">
                 <option></option>
                     <?php
@@ -102,7 +107,7 @@ if(isset($_POST['submitq'])){
         </div>
       
         
-        <button name="submitq" type="submit">Register</button>
+        <button name="submitq" type="submit">Update</button>
     </section>
    
 </form>
