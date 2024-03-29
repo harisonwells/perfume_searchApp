@@ -9,8 +9,6 @@ if(isset($_POST['submit'])){
 
   if($query){
     echo "<script>alert('perfume registered')</script>";
-  } else{
-    echo ("perfume not registered");
   }
 }
 ?>
@@ -31,7 +29,7 @@ if(isset($_POST['submit'])){
 
 
 
-<form action="send.php" method="POST" >
+<form action=" " method="POST" >
     <section class="container">
         <header>Rejister Perfume</header>
        
