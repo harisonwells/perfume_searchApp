@@ -31,11 +31,11 @@ if(isset($_POST['submit'])){
 
 <form action=" " method="POST" >
     <section class="container">
-        <header>Rejister Perfume</header>
+        <header>Register Perfume</header>
        
         <div class="inputbox"> 
             <label for="iname">Perfume Name:</label>
-            <input type="text" name="pname" id="iname" required placeholder="Perfume name"/>
+            
         </div>
       
         
@@ -49,3 +49,6 @@ if(isset($_POST['submit'])){
 
  </body>
 </html>
+
+
+

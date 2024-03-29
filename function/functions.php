@@ -11,8 +11,12 @@
 
     }
 
-    function deleterec(){
-        
+    function listpefumes(){
+        global $conn;
+        $query = "select * from perfumes";
+        $fumlist = mysqli_query($conn, $query);
+        return $fumlist;
+
     }
 
      
