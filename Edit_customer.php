@@ -9,11 +9,12 @@ $resultthird = mysqli_query($conn, "select pname from perfumes");
 if(isset($_POST['submitq'])){
 
     $customername = $_POST['custname'];
+    $custID = $_POST['custid'];
     $puff = $_POST['perfum'];
     $puffsec = $_POST['perfumsec'];
     $puffthird = $_POST['perfumthird'];
     $check = ['$puff', '$puffsec', '$resultthird'];
-    $query = mysqli_query($conn, "update perfumes set pname");
+    $query = mysqli_query($conn, "update customers set choice='$puff', choicetwo='$puffsec', choicethird='$puffthird' where customer_id ='$custID'");
     
 
     // if($check ==' '){
@@ -24,7 +25,7 @@ if(isset($_POST['submitq'])){
     // }
   
     if($query){
-      echo "<script>alert('customer updated')</script>";
+      echo "<script>alert('customer updated succesfully')</script>";
     }
   }
 ?>

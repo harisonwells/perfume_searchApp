@@ -27,17 +27,20 @@ $resulttwo = display()
             <table>
                 <thead>
                     <tr>
+                        <th>Customer ID</th>
                         <th>Customer Name</th>
                         <th>perfume</th>
                         <th>perfume</th>
                         <th>perfume</th>
+                        
                     </tr>
                     
                 </thead>
                 <tr>
                         <?php
                         while($rowtwo = mysqli_fetch_assoc($resulttwo)){
-                         ?>   
+                         ?> 
+                         <td><?php echo $rowtwo['customer_id']?></td>  
                         <td><?php echo $rowtwo['customer_name']?></td>
                         <td><?php echo $rowtwo['choice']?></td>
                         <td><?php echo $rowtwo['choicetwo']?></td>
